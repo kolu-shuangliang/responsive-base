@@ -1,7 +1,12 @@
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+//
 // NavBar default styles above all media widths.
-// Media sizes are named with prefix "-size". max-width: 992 file is _navbar-992.scss
+//
+// NavBar have navbar-breakpoint.scss file that collapses NavBar into compact view.
+// Insert @import 'navbar-breakpoint' into media width that collapses it.
+//
 // SASS variabels are in responsive-base.scss file. Whole css file is parsed together there.
+//
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 body{
 	margin-top: $navbar-height;
