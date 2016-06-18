@@ -1,0 +1,84 @@
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// NavBar default styles above all media widths.
+// Media sizes are named with prefix "-size". max-width: 992 file is _navbar-992.scss
+// SASS variabels are in responsive-base.scss file. Whole css file is parsed together there.
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+body{
+	margin-top: $navbar-height;
+}
+#navbar-container{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: $navbar-height;
+	background-color: $navbar-color;
+	z-index: 999999;
+	#navbar-logo{
+		float: left;
+		a{
+			display: block;
+			padding: 0 20px;
+			font-size: $navbar-logo-size;
+			line-height: $navbar-height;
+			background-color: $navbar-color;
+			color: $navbar-color-hover;
+			text-decoration: none;
+		}
+	}
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		float: left;
+		li{
+			float: left;
+			position: relative;
+			a{
+				display: block;
+				padding: 0 15px;
+				line-height: $navbar-height;
+				background-color: $navbar-color;
+				color: black;
+				text-decoration: none;
+			}
+			a:hover{
+				color: $secondary-color;
+				background-color: $navbar-color-hover;
+			}
+			.collapser:after{
+				padding-left: 5px;
+				content: '▾';
+			}
+			.navbar-nested{
+				position: absolute;
+				display: none;
+				li {
+					min-width: 200px;
+					a{
+						padding-left: 15px;
+						line-height: $navbar-height;
+						border-left: 5px solid $navbar-color-hover;
+					}
+				}
+                li:first-child{
+                    border-top: 2px solid $navbar-color-hover;
+                }
+			}
+		}
+	}
+	#navbar-collapser{
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0 10px;
+		line-height: $navbar-height;
+		font-size: 30px;
+		color: black;
+		text-decoration: none;
+	}
+	#navbar-collapser:hover{
+		color: $secondary-color;
+		background-color: $navbar-color-hover;
+	}
+}
