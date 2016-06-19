@@ -8,9 +8,6 @@
 // SASS variabels are in responsive-base.scss file. Whole css file is parsed together there.
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
-body{
-	margin-top: $navbar-height;
-}
 #navbar-container{
 	position: fixed;
 	top: 0;
