@@ -3,6 +3,8 @@ Responsive css elements. Also stick to top navbar with compact view.
 
 Include css reset.
 
+Check it at [HERE](http://kolu-shuangliang.xyz/responsive-base/dist/)
+
 ## Navbar ##
 * Sticks to top.
 * No JQuery required.
@@ -25,8 +27,21 @@ Grid widths are following.
 3. 1/3 `.cl-3`, 2/3 `.cl-33`
 4. 1/4 `.cl-4`, 2/4 `.cl-44`, 3/4 `.cl-444`
 
-## Misc stuffs ##
+## Misc stuffs and smaller stuffs ##
 Small stuffs. Easier to keep reusing small classes in html instead of writing css to single block.
+
+### Image ###
+Image that goes into fullscreen viewer when clicked.
+
+Requires container with `.rb-img-container`. User needs to set container width/height.
+Image `.rb-img` scales to containers width/height and keeps its original aspect.
+
+`<div class="rb-img-container"><img class="rb-img"></div>`
+
+Also supports using thumbnails.
+
+`<div class="rb-img-container"><img class="rb-img" src="thumb.png" rb-target="original.png" ></div>`
+
 
 ### Background colors ###
 `.primary` primary color: `rgb( 220, 235, 255 )`
