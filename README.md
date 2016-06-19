@@ -26,7 +26,7 @@ Grid widths are following.
 4. 1/4 `.cl-4`, 2/4 `.cl-44`, 3/4 `.cl-444`
 
 ## Misc stuffs ##
-Small stuffs. Easier to keep reusing small classes in html instead of defining css to single block.
+Small stuffs. Easier to keep reusing small classes in html instead of writing css to single block.
 
 ### Background colors ###
 `.primary` primary color: `rgb( 220, 235, 255 )`
