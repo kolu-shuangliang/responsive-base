@@ -19,6 +19,7 @@ Tried to make this like bootstrap. Only did 1 - 4 grids.
 Grids are grouped in `cl-group` class. Kind of like container.
 
 Grid widths are following.
+
 1. 1 `.cl-1`
 2. 1/2 `.cl-2`
 3. 1/3 `.cl-3`, 2/3 `.cl-33`
