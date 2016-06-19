@@ -8,13 +8,14 @@ var ResponsiveNavbar = function () {
     var collapsed = false;
     var mobile_view = false;
     var selected_nested = null;
+    let i;
     // Check if styles are already in mobile view
     if (document.documentElement.clientWidth < 768) {
         mobile_view = true;
     }
     // Adds events listener that collapsed nested links to dropdown links in navbar.
-    for (var x = 0; x < collapser.length; x++) {
-        collapser[x].addEventListener('click', function (event) {
+    for (i = 0; i < collapser.length; i++) {
+        collapser[i].addEventListener('click', function (event) {
             event.preventDefault();
             event.stopPropagation();
             var el = this.parentElement.getElementsByClassName('navbar-nested')[0];
@@ -26,9 +27,9 @@ var ResponsiveNavbar = function () {
                 // Hide all other displayed navbar elements.
                 // There should be only 0 or 1 displayed navbar-nested,
                 // so breaks away after hiding first one.
-                for (var x = 0; x < collapser.length; x++) {
-                    if (nested[x].style.display === 'inline') {
-                        nested[x].style.display = 'none';
+                for (var i = 0; i < collapser.length; i++) {
+                    if (nested[i].style.display === 'inline') {
+                        nested[i].style.display = 'none';
                         break;
                     }
                 }
@@ -43,12 +44,13 @@ var ResponsiveNavbar = function () {
     document.getElementById('navbar-collapser').addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
-        for (var x = 0; x < ulList.length; x++) {
+        let i;
+        for (i = 0; i < ulList.length; i++) {
             if (collapsed) {
-                ulList[x].style.display = 'none';
+                ulList[i].style.display = 'none';
             }
             else {
-                ulList[x].style.display = 'inline';
+                ulList[i].style.display = 'inline';
             }
         }
 
@@ -67,17 +69,17 @@ var ResponsiveNavbar = function () {
     // Css don't seems to override JavaScript changes. So this seems to be easiest way.
     // Use mobile_view so actions are only performed once after entering/existing.
     window.addEventListener('resize', function () {
-        var x;
+        let i;
         if (window.innerWidth >= 769 && mobile_view === true) {
-            for (x = 0; x < ulList.length; x++) {
-                ulList[x].style.display = 'inline';
+            for (i = 0; i < ulList.length; i++) {
+                ulList[i].style.display = 'inline';
             }
             navbar_container.style.paddingLeft = (navbar_container.offsetWidth - navbar_container.clientWidth) + 'px';
             mobile_view = false;
         }
         else if (window.innerWidth <= 768 && mobile_view === false) {
-            for (x = 0; x < ulList.length; x++) {
-                ulList[x].style.display = 'none';
+            for (i = 0; i < ulList.length; i++) {
+                ulList[i].style.display = 'none';
                 collapsed = false;
             }
             navbar_container.style.paddingLeft = (navbar_container.offsetWidth - navbar_container.clientWidth) + 'px';
@@ -91,9 +93,10 @@ var ResponsiveNavbar = function () {
     // Close displayed navbar-nested if user clicks on any elements
     // other than navbar-nested collapser
     document.addEventListener('click', function () {
-        for (var x = 0; x < collapser.length; x++) {
-            if (nested[x].style.display === 'inline') {
-                nested[x].style.display = 'none';
+        let i;
+        for (i = 0; i < collapser.length; i++) {
+            if (nested[i].style.display === 'inline') {
+                nested[i].style.display = 'none';
                 break;
             }
         }
