@@ -1,16 +1,21 @@
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+//
 // Grid system default styles.
+//
 // Media sizes are named with prefix "-size". max-width: 992 file is _grid-992.scss
+//
 // SASS variabels are in responsive-base.scss file. Whole css file is parsed together there
+//
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 .cl-1, .cl-2, .cl-3, .cl-33, .cl-4, .cl-44, .cl-444{
-	height: 0px;
+	min-height: 0px;
 	float: left;
 	margin: 5px;
 	box-sizing: border-box;
 	border: 1px solid rgba( 0, 0, 0, 0.1 );
 	border-radius: 5px;
 	background-color: white;
+	overflow: visible;
 }
 // Margin left/right is 10px in total. Final width needs to be calculated with "- 10px";
 .cl-1{
