@@ -16,64 +16,83 @@
 </head>
 
 <body>
-	<!-- Navbar. Supports only single nested element inside navbar. -->
-	<nav id="navbar-container">
-		<div id="navbar-logo">
-			<a href="#">Shuangliang Kolu</a>
-		</div>
-		<ul class="nav-links">
-			<li><a href="#Home">Home</a></li>
-			<li><a href="#Link1">Link 1</a></li>
-			<li><a class="collapser" href="#Link3">Nested</a>
-				<ul class="navbar-nested">
-					<li><a href="#NestedLink1">Nested Link 1</a></li>
-					<li><a href="#NestedLink2">Nested Link 2</a></li>
-				</ul>
-			</li>
-			<li><a class="collapser" href="#Link3">Nested</a>
-				<ul class="navbar-nested">
-					<li><a href="#NestedLink1">Nested Link 1</a></li>
-					<li><a href="#NestedLink2">Nested Link 2</a></li>
-					<li><a href="#NestedLink3">Nested Link 3</a></li>
-				</ul>
-			</li>
-		</ul>
-		<ul class="nav-links right">
-			<li><a href="#Link1">Link 1</a></li>
-			<li><a href="#Link2">Link 2</a></li>
-		</ul>
-		<a id="navbar-collapser" href="#">☰</a>
-	</nav>
-	<hr />
-		<div class="test cl-1 primary">1</div>
-	
-	<hr /><hr />
-		<div class="test cl-2 secondary">1 / 2</div>
-		<div class="test cl-2 secondary">1 / 2</div>
-	
-	<hr /><hr />
-		<div class="test cl-3">1 / 3</div>
-		<div class="test cl-3">1 / 3</div>
-		<div class="test cl-3">1 / 3</div>
-	
-	<hr /><hr />
-		<div class="test cl-33">2 / 3</div>
-		<div class="test cl-3">1 / 3</div>
-	
-	<hr /><hr />
-		<div class="test cl-4">1 / 4</div>
-		<div class="test cl-4">1 / 4</div>
-		<div class="test cl-4">1 / 4</div>
-		<div class="test cl-4">1 / 4</div>
-	
-	<hr /><hr />
-		<div class="test cl-44">2 / 4</div>
-		<div class="test cl-4">1 / 4</div>
-		<div class="test cl-4">1 / 4</div>
-	
-	<hr /><hr />
-		<div class="test cl-444">3 / 4</div>
-		<div class="test cl-4">1 / 4</div>
+<!--
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+	Navbar.
+	Supports only single nested element inside navbar.
+
+	Require margin/padding top using body.
+	Recommended body{padding-top: 70px;}
+
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+-->
+<nav id="navbar-container">
+	<div id="navbar-logo">
+		<a href="#">Shuangliang Kolu</a>
+	</div>
+	<ul class="nav-links">
+		<li><a href="#Home">Home</a></li>
+		<li><a href="#Link1">Link 1</a></li>
+		<li><a class="collapser" href="#Link3">Nested</a>
+			<ul class="navbar-nested">
+				<li><a href="#NestedLink1">Nested Link 1</a></li>
+				<li><a href="#NestedLink2">Nested Link 2</a></li>
+			</ul>
+		</li>
+		<li><a class="collapser" href="#Link3">Nested</a>
+			<ul class="navbar-nested">
+				<li><a href="#NestedLink1">Nested Link 1</a></li>
+				<li><a href="#NestedLink2">Nested Link 2</a></li>
+				<li><a href="#NestedLink3">Nested Link 3</a></li>
+			</ul>
+		</li>
+	</ul>
+	<ul class="nav-links right">
+		<li><a href="#Link1">Link 1</a></li>
+		<li><a href="#Link2">Link 2</a></li>
+	</ul>
+	<a id="navbar-collapser" href="#">☰</a>
+</nav>
+<!--
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+	Grid examples
+
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+-->
+<div class="cl-group">
+	<div class="test cl-1 primary">1</div>
+</div>
+<div class="cl-group">
+	<div class="test cl-2 secondary">1 / 2</div>
+	<div class="test cl-2 secondary">1 / 2</div>
+</div>
+<div class="cl-group">
+	<div class="test cl-3">1 / 3</div>
+	<div class="test cl-3">1 / 3</div>
+	<div class="test cl-3">1 / 3</div>
+</div>
+<div class="cl-group">
+	<div class="test cl-33">2 / 3</div>
+	<div class="test cl-3">1 / 3</div>
+</div>
+<div class="cl-group">
+	<div class="test cl-4">1 / 4</div>
+	<div class="test cl-4">1 / 4</div>
+	<div class="test cl-4">1 / 4</div>
+	<div class="test cl-4">1 / 4</div>
+</div>
+<div class="cl-group">
+	<div class="test cl-44">2 / 4</div>
+	<div class="test cl-4">1 / 4</div>
+	<div class="test cl-4">1 / 4</div>
+</div>
+<div class="cl-group">
+	<div class="test cl-444">3 / 4</div>
+	<div class="test cl-4">1 / 4</div>
+</div>
+
 
 <!-- Include required javascript file for navbar -->
 <script src="js/responsive-base.js"></script>
