@@ -12,6 +12,32 @@ $navbar-color-hover: rgb( 110, 110, 110 );
 // Grid elements default styles
 @import 'grid';
 
+// Image
+.rb-img-container{
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	position: relative;
+	border: 2px solid $navbar-color;
+	background-color: $navbar-color;
+}
+.rb-img-container:hover{
+	border: 2px solid $navbar-color-hover;
+	background-color: $navbar-color-hover;
+}
+.rb-img{
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
 
 /* Medium Devices, Desktops */
 @media only screen and ( max-width : 992px ) {

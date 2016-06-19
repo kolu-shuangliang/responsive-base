@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cache-control" content="no-store">
 
-    <title>Responsive - min size</title>
+    <title>Responsive - base</title>
 
     <!-- Include stylsheet file -->
 	<link rel="stylesheet" href="css/responsive-base.css">
@@ -93,6 +93,27 @@
 	<div class="test cl-4">1 / 4</div>
 </div>
 
+<!--
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+	Image.
+	Specify width/height on 'rb-img-container' div element.
+	
+	Image will fit into 'rb-img-container' width or height and keep 1:1 aspect.
+
+	'rb-img-container' will have 2px border to all sides.
+	So if you wants images to be 200px 'rb-img-container' dimensions should be 204/204
+
+	'rb-img-container' uses same background-color and hover color as navbar.
+	Both are set as sass variable at start of responsive-base.scss.
+
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+-->
+<div class="cl-group">
+	<div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;" >
+		<img class="rb-img" src="img/flower.jpg" >
+	</div>
+</div>
 
 <!-- Include required javascript file for navbar -->
 <script src="js/responsive-base.js"></script>
