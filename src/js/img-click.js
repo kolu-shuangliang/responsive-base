@@ -15,9 +15,25 @@ var ResponsiveImg = function () {
     for(let i = 0; i < imgContainerList.length; i++){
         imgContainerList[i].addEventListener('click', function(){
             viewer.style.display = 'block';
-            var image = this.querySelector('.rb-img').cloneNode(true);
-            viewer.appendChild(image);
+
+            var tbImage = this.querySelector('.rb-img');
+            //
+            var image = null;
+            if(tbImage.getAttribute('rb-target')){
+                image = new Image();
+                image.className = 'rb-img';
+                image.addEventListener('load', onLoadAppend( viewer, image ));
+                image.src = tbImage.getAttribute('rb-target');
+            }
+            else{
+                image = this.querySelector('.rb-img').cloneNode(true);
+                viewer.appendChild(image);
+            }
         }, false);
+    }
+
+    function onLoadAppend( target, element ){
+        target.appendChild( element );
     }
 };
 // Invoke navbar

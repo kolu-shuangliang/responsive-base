@@ -107,6 +107,10 @@
 	'rb-img-container' uses same background-color and hover color as navbar.
 	Both are set as sass variable at start of responsive-base.scss.
 
+    rb-img can use thumbnail.
+    Put thumnails in src="thumb.jpg" and original in rb-target="original.jpg".
+    This will load original into viewer.
+
 	// // // // // // // // // // // // // // // // // // // // // // // // // // //
 -->
 <div class="cl-group">
@@ -119,8 +123,9 @@
     <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
         <img class="rb-img" src="img/flower-003.jpg">
     </div>
+    <!-- Thumbnail image -->
     <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
-        <img class="rb-img" src="img/flower-004.jpg">
+        <img class="rb-img" src="img/flower-004.jpg" rb-target="img/flower-003.jpg">
     </div>
 </div>
 
