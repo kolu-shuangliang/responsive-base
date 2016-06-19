@@ -118,6 +118,5 @@ gulp.task('deploy', [
     'copy-index',
     'deploy-images',
     'sass-styles',
-    'es-lint',
     'deploy-scripts'
 ]);
