@@ -14,19 +14,20 @@ $navbar-color-hover: rgb( 110, 110, 110 );
 
 // Image
 .rb-img-container{
-	box-sizing: border-box;
+    box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-	position: relative;
-	border: 2px solid $navbar-color;
-	background-color: $navbar-color;
+    position: relative;
+    border: 2px solid $navbar-color;
+    background-color: $navbar-color;
+    cursor: pointer;
 }
 .rb-img-container:hover{
-	border: 2px solid $navbar-color-hover;
-	background-color: $navbar-color-hover;
+    border: 2px solid $navbar-color-hover;
+    background-color: $navbar-color-hover;
 }
 .rb-img{
-	position: absolute;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -37,49 +38,58 @@ $navbar-color-hover: rgb( 110, 110, 110 );
     width: auto;
     height: auto;
 }
-
+#responsive-image-viewer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba( 50, 50, 50, 0.8 );
+    z-index: 1000000;
+    cursor: pointer;
+}
 
 /* Medium Devices, Desktops */
 @media only screen and ( max-width : 992px ) {
-	@import 'grid-992';
+    @import 'grid-992';
 }
 /* Small Devices, Tablets */
 /* COLLAPSED NAVBAR*/
 @media only screen and ( max-width : 768px ) {
-	// Collapses NavBar into compact view in this media width.
-	@import 'navbar-breakpoint';
-	
-	@import 'grid-768';
+    // Collapses NavBar into compact view in this media width.
+    @import 'navbar-breakpoint';
+    
+    @import 'grid-768';
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and ( max-width : 480px ) {
-	@import 'grid-480';
+    @import 'grid-480';
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and ( max-width : 320px ) {
-	@import 'grid-320';
+    @import 'grid-320';
 }
 
 
 /*
-	Some optional classes for easy fast css stuffs.
-	Loads at end so it will override default values.
+    Some optional classes for easy fast css stuffs.
+    Loads at end so it will override default values.
 */
 .primary{
-	background-color: $primary-color;
+    background-color: $primary-color;
 }
 .secondary{
-	background-color: $secondary-color;
+    background-color: $secondary-color;
 }
 /* float classes. Override with !important; */
 .left{
-	float: left !important;
+    float: left !important;
 }
 .right{
-	float: right !important;
+    float: right !important;
 }
 .text-pre{
-	white-space: pre-wrap;
+    white-space: pre-wrap;
 }

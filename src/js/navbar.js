@@ -8,13 +8,12 @@ var ResponsiveNavbar = function () {
     var collapsed = false;
     var mobile_view = false;
     var selected_nested = null;
-    let i;
     // Check if styles are already in mobile view
     if (document.documentElement.clientWidth < 768) {
         mobile_view = true;
     }
     // Adds events listener that collapsed nested links to dropdown links in navbar.
-    for (i = 0; i < collapser.length; i++) {
+    for (let i = 0; i < collapser.length; i++) {
         collapser[i].addEventListener('click', function (event) {
             event.preventDefault();
             event.stopPropagation();
@@ -69,16 +68,15 @@ var ResponsiveNavbar = function () {
     // Css don't seems to override JavaScript changes. So this seems to be easiest way.
     // Use mobile_view so actions are only performed once after entering/existing.
     window.addEventListener('resize', function () {
-        let i;
         if (window.innerWidth >= 769 && mobile_view === true) {
-            for (i = 0; i < ulList.length; i++) {
+            for (let i = 0; i < ulList.length; i++) {
                 ulList[i].style.display = 'inline';
             }
             navbar_container.style.paddingLeft = (navbar_container.offsetWidth - navbar_container.clientWidth) + 'px';
             mobile_view = false;
         }
         else if (window.innerWidth <= 768 && mobile_view === false) {
-            for (i = 0; i < ulList.length; i++) {
+            for (let i = 0; i < ulList.length; i++) {
                 ulList[i].style.display = 'none';
                 collapsed = false;
             }
@@ -93,8 +91,7 @@ var ResponsiveNavbar = function () {
     // Close displayed navbar-nested if user clicks on any elements
     // other than navbar-nested collapser
     document.addEventListener('click', function () {
-        let i;
-        for (i = 0; i < collapser.length; i++) {
+        for (let i = 0; i < collapser.length; i++) {
             if (nested[i].style.display === 'inline') {
                 nested[i].style.display = 'none';
                 break;
