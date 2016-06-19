@@ -1,37 +1,45 @@
 # responsive-base
-Responsive css elements. Also stick to top navbar with compact view.
+Responsive grid and some usefull elements that I like.
+Also pretty good (I think) navbar that sticks to top of the viewport.
+
+Outputted css file contents are modifiable in `src/responsive-base.scss` file.
+Just remove imports to exclude.
+
+Requires building using `npm install`, `npm install --global gulp` for cli and `gulp deploy` command.
 
 Include css reset.
 
-Check it at [HERE](http://kolu-shuangliang.xyz/responsive-base/dist/)
+Check some examples at [HERE](http://kolu-shuangliang.xyz/responsive-base/dist/)
 
 ## Navbar ##
 * Sticks to top.
 * No JQuery required.
-* Default and mobile view. Media query as 768px width.
+* Default and mobile view. Media query triggers at < 768px width.
 * Logo/brand, single nested links, floats left/right.
 
 Problems for now.
 * Too many links push to second row. Have to manage them manually.
-* If last link in float: right is nested, its dropdown will clip to outside of the viewport.
+* If last link in `float: right` is nested, its dropdown will clip to outside of the viewport. Manage manually.
 
 ## Responsive grids ##
-Tried to make this like bootstrap. Only did 1 - 4 grids.
+Grid system that resizes itself at certain media query widths.
+Only did 1 - 4 grids.
 
-Grids are grouped in `cl-group` class. Kind of like container.
+Grids are grouped in `cl-group` class. It acts like the container for grid "groups".
 
-Grid widths are following.
+Grids widths are following.
 
 1. 1 `.cl-1`
 2. 1/2 `.cl-2`
 3. 1/3 `.cl-3`, 2/3 `.cl-33`
 4. 1/4 `.cl-4`, 2/4 `.cl-44`, 3/4 `.cl-444`
 
-## Misc stuffs and smaller stuffs ##
-Small stuffs. Easier to keep reusing small classes in html instead of writing css to single block.
+## Misc and smaller stuffs ##
+Easier to keep reusing small classes in html instead of writing css to single block.
 
 ### Image ###
-Image that goes into fullscreen viewer when clicked.
+Image styles that goes into fullscreen viewer when clicked.
+Uses JavaScript.
 
 Requires container with `.rb-img-container`. User needs to set container width/height.
 Image `.rb-img` scales to containers width/height and keeps its original aspect.
@@ -39,6 +47,8 @@ Image `.rb-img` scales to containers width/height and keeps its original aspect.
 `<div class="rb-img-container"><img class="rb-img"></div>`
 
 Also supports using thumbnails.
+Thumbnail that will be displayed in image is `src="thumb.png"` and original that will be 
+displayed in fullscreen viewer is `rb-target="original.png"`
 
 `<div class="rb-img-container"><img class="rb-img" src="thumb.png" rb-target="original.png" ></div>`
 
