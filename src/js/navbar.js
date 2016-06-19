@@ -1,4 +1,4 @@
-var PersonalNavbar = function(){
+var ResponsiveNavbar = function(){
     // Toggle display to none/inline when users press collapser links inside navbar
     var collapser = document.getElementsByClassName( 'collapser' );
     var nested = document.getElementsByClassName( 'navbar-nested' );
@@ -113,13 +113,5 @@ var PersonalNavbar = function(){
         }
     }
 };
-PersonalNavbar();
-
-// Removes selected class from previous element and adds it to this.
-/*
-if ( selected != null ){
-    selected.className = selected.className.replace( /\bselected\b/, '' );
-}
-this.className += ' selected';
-selected = this;
-*/
+// Invoke navbar
+ResponsiveNavbar();
