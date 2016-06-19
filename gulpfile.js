@@ -81,31 +81,32 @@ gulp.task('es-lint', function () {
 });
 
 gulp.task('scripts', function () {
-    gulp.src('src/js/**/*.js')
+    return gulp.src('src/js/**/*.js')
         .pipe(concat('responsive-base.js'))
         .pipe(gulp.dest('dist/js'));
 });
 
 // Move files to dist folder
 gulp.task('copy-index', function () {
-    gulp.src('src/index.html')
+    return gulp.src('src/index.html')
         .pipe(gulp.dest('./dist'));
 });
 gulp.task('copy-images', function () {
-    gulp.src('src/img/*')
+    return gulp.src('src/img/*')
         .pipe(gulp.dest('dist/img'));
 });
 
 
-// Build js for deploy. Minify 'scripts' task
-gulp.task('deploy-scripts', function () {
-    gulp.src('src/js/**/*.js')
-        .pipe(concat('responsive-base.js'))
-        .pipe(uglify())
+// Minify js
+gulp.task('min-scripts', function () {
+    return gulp.src('dist/js/*.js')
+        .pipe(uglify().on('error', function(e){
+            console.log(e);
+         }))
         .pipe(gulp.dest('dist/js'));
 });
 gulp.task('deploy-images', function () {
-    gulp.src('src/img/*')
+    return gulp.src('src/img/*')
         .pipe(imagemin({
             progressive: true,
             use: [pngquant()]
@@ -114,9 +115,10 @@ gulp.task('deploy-images', function () {
 });
 // Builds all stuffs for deployment
 // Only minified js for now. Maybe delete all useless stuffs in future
+// no min-scripts yet... uglify don't support es6 let or something...
 gulp.task('deploy', [
     'copy-index',
     'deploy-images',
     'sass-styles',
-    'deploy-scripts'
+    'scripts'
 ]);
