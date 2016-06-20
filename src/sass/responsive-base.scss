@@ -38,7 +38,7 @@ pre.code{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    border: 3px solid rgb( 104,104,104 );
+    border: 3px solid rgb(158, 158, 158);
     padding: 10px 5px;
     background-color: $secondary-color;
     overflow-x: auto;
@@ -46,6 +46,10 @@ pre.code{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.anchor{
+    padding-top: 70px;
+    margin-top: -70px;
+}
 
 
 // Navbar elements default styles
@@ -90,6 +94,9 @@ pre.code{
 .secondary{
     background-color: $secondary-color;
 }
+.default{
+    background-color: rgb(255,255,255);
+}
 /* float classes. Override with !important; */
 .left{
     float: left !important;
@@ -106,4 +113,12 @@ pre.code{
 }
 .text-pre{
     white-space: pre-wrap;
+}
+.text-no-select{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

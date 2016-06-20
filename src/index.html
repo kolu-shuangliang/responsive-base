@@ -25,6 +25,9 @@
 	Require margin/padding top using body.
 	Recommended body{padding-top: 70px;}
 
+    #Anchor links require target to have .anchor class.
+    Use block elements as anchor.
+
 	// // // // // // // // // // // // // // // // // // // // // // // // // // //
 -->
 <nav id="navbar-container">
@@ -34,10 +37,12 @@
     <ul class="nav-links">
         <li><a href="https://github.com/kolu-shuangliang/responsive-base" target="_blank">Repository</a></li>
         <li><a href="#Home">Home</a></li>
-        <li><a class="collapser" href="#Link3">Nested</a>
+        <li><a class="collapser text-no-select">Elements</a>
             <ul class="navbar-nested">
-                <li><a href="#NestedLink1">Nested Link 1</a></li>
-                <li><a href="#NestedLink2">Nested Link 2</a></li>
+                <li><a href="#grids">Grid elements</a></li>
+                <li><a href="#pre">Pre for codes</a></li>
+                <li><a href="#text-elements">Text elements</a></li>
+                <li><a href="#images">Images</a></li>
             </ul>
         </li>
     </ul>
@@ -45,7 +50,7 @@
         <li><a href="#Link1">Link 1</a></li>
         <li><a href="#Link2">Link 2</a></li>
     </ul>
-    <a id="navbar-collapser" href="#">☰</a>
+    <a id="navbar-collapser" class="text-no-select">☰</a>
 </nav>
 <!--
 	// // // // // // // // // // // // // // // // // // // // // // // // // // //
@@ -54,66 +59,89 @@
 
 	// // // // // // // // // // // // // // // // // // // // // // // // // // //
 -->
+<section id="grids" class="anchor">
+    <hr>
+    <h1 class="text-center primary">RESPONSIVE GRIDS</h1>
+    <hr>
+    <div class="cl-group">
+        <div class="test cl-1 primary">1</div>
+    </div>
+    <div class="cl-group">
+        <div class="cl-1">
+            <div class="cl-header text-center"><h4>panel system for grid</h4></div>
+            <div class="cl-content default">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue aliquam nisl, fringilla rhoncus sem mattis at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque luctus eros nec vulputate aliquet. Donec eu euismod lorem, ac laoreet odio. Vestibulum non enim accumsan, scelerisque velit et, feugiat diam. Praesent neque neque, interdum id erat at, consequat vehicula enim. Nam eu orci eget sapien pulvinar accumsan et in augue. Proin lorem libero, vehicula porta vulputate ut, tempus at lacus. Ut imperdiet tincidunt quam non feugiat. Praesent erat nunc, euismod a rutrum id, condimentum quis lectus.</p>
+            </div>
+        </div>
+        <div class="cl-2">
+            <div class="cl-header text-center"><h4>panel system for grid</h4></div>
+            <div class="cl-content default">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue aliquam nisl, fringilla rhoncus sem mattis at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque luctus eros nec vulputate aliquet. Donec eu euismod lorem, ac laoreet odio. Vestibulum non enim accumsan, scelerisque velit et, feugiat diam. Praesent neque neque, interdum id erat at, consequat vehicula enim. Nam eu orci eget sapien pulvinar accumsan et in augue. Proin lorem libero, vehicula porta vulputate ut, tempus at lacus. Ut imperdiet tincidunt quam non feugiat. Praesent erat nunc, euismod a rutrum id, condimentum quis lectus.</p>
+            </div>
+        </div>
+        <div class="cl-2">
+            <div class="cl-header text-center"><h4>panel system for grid</h4></div>
+            <div class="cl-content default">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue aliquam nisl, fringilla rhoncus sem mattis at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque luctus eros nec vulputate aliquet. Donec eu euismod lorem, ac laoreet odio. Vestibulum non enim accumsan, scelerisque velit et, feugiat diam. Praesent neque neque, interdum id erat at, consequat vehicula enim. Nam eu orci eget sapien pulvinar accumsan et in augue. Proin lorem libero, vehicula porta vulputate ut, tempus at lacus. Ut imperdiet tincidunt quam non feugiat. Praesent erat nunc, euismod a rutrum id, condimentum quis lectus.</p>
+            </div>
+        </div>
+    </div>
+    <div class="cl-group">
+        <div class="test cl-2 secondary">1 / 2</div>
+        <div class="test cl-2 secondary">1 / 2</div>
+    </div>
+    <div class="cl-group">
+        <div class="test cl-3">1 / 3</div>
+        <div class="test cl-3">1 / 3</div>
+        <div class="test cl-3">1 / 3</div>
+    </div>
+    <div class="cl-group">
+        <div class="test cl-33">2 / 3</div>
+        <div class="test cl-3">1 / 3</div>
+    </div>
+    <div class="cl-group">
+        <div class="test cl-4">1 / 4</div>
+        <div class="test cl-4">1 / 4</div>
+        <div class="test cl-4">1 / 4</div>
+        <div class="test cl-4">1 / 4</div>
+    </div>
+    <div class="cl-group">
+        <div class="test cl-44">2 / 4</div>
+        <div class="test cl-4">1 / 4</div>
+        <div class="test cl-4">1 / 4</div>
+    </div>
+    <div class="cl-group">
+        <div class="test cl-444">3 / 4</div>
+        <div class="test cl-4">1 / 4</div>
+    </div>
+</section>
+<section id="pre" class="anchor">
+    <hr>
+    <h1 class="text-center primary">PRE FOR CODES</h1>
+    <hr>
+    <div class="cl-group">
+    <pre class="cl-3 code">
+    &lt;div class=&quot;cl-group&quot;&gt;
+        &lt;pre class=&quot;cl-1 code&quot;&gt;
+            code
+        &lt;/pre&gt;
+    &lt;/div&gt;
+    </pre>
+    <pre class="cl-3 code">
+    &lt;div class=&quot;cl-group&quot;&gt;
+        &lt;pre class=&quot;cl-1 code&quot;&gt;
+            code
+        &lt;/pre&gt;
+    &lt;/div&gt;
+    </pre>
+    <pre class="cl-3 code">
+    &lt;div class=&quot;cl-group&quot;&gt;&lt;pre class=&quot;cl-1 code&quot;&gt;code&lt;/pre&gt;&lt;/div&gt;
+    </pre>
+    </div>
+</section>
+<section id="text-elements" class="anchor">
 <hr>
-<h1 id="grids" class="text-center primary">RESPONSIVE GRIDS</h1>
-<hr>
-<div class="cl-group">
-    <div class="test cl-1 primary">1</div>
-</div>
-<div class="cl-group">
-    <div class="test cl-2 secondary">1 / 2</div>
-    <div class="test cl-2 secondary">1 / 2</div>
-</div>
-<div class="cl-group">
-    <div class="test cl-3">1 / 3</div>
-    <div class="test cl-3">1 / 3</div>
-    <div class="test cl-3">1 / 3</div>
-</div>
-<div class="cl-group">
-    <div class="test cl-33">2 / 3</div>
-    <div class="test cl-3">1 / 3</div>
-</div>
-<div class="cl-group">
-    <div class="test cl-4">1 / 4</div>
-    <div class="test cl-4">1 / 4</div>
-    <div class="test cl-4">1 / 4</div>
-    <div class="test cl-4">1 / 4</div>
-</div>
-<div class="cl-group">
-    <div class="test cl-44">2 / 4</div>
-    <div class="test cl-4">1 / 4</div>
-    <div class="test cl-4">1 / 4</div>
-</div>
-<div class="cl-group">
-    <div class="test cl-444">3 / 4</div>
-    <div class="test cl-4">1 / 4</div>
-</div>
-
-<hr>
-<h1 id="pre" class="text-center primary">PRE FOR CODES</h1>
-<hr>
-<div class="cl-group">
-<pre class="cl-3 code">
-&lt;div class=&quot;cl-group&quot;&gt;
-    &lt;pre class=&quot;cl-1 code&quot;&gt;
-        code
-    &lt;/pre&gt;
-&lt;/div&gt;
-</pre>
-<pre class="cl-3 code">
-&lt;div class=&quot;cl-group&quot;&gt;
-    &lt;pre class=&quot;cl-1 code&quot;&gt;
-        code
-    &lt;/pre&gt;
-&lt;/div&gt;
-</pre>
-<pre class="cl-3 code">
-&lt;div class=&quot;cl-group&quot;&gt;&lt;pre class=&quot;cl-1 code&quot;&gt;code&lt;/pre&gt;&lt;/div&gt;
-</pre>
-</div>
-
-<hr>
-<h1 id="text-elements" class="text-center primary">TEXT ELEMENTS</h1>
+<h1 class="text-center primary">TEXT ELEMENTS</h1>
 <hr>
 <div class="cl-group">
     <div class="cl-1">
@@ -128,6 +156,7 @@
         </p>
     </div>
 </div>
+</section>
 <!--
 	// // // // // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -148,25 +177,26 @@
 
 	// // // // // // // // // // // // // // // // // // // // // // // // // // //
 -->
-<hr>
-<h1 id="images" class="text-center primary">IMAGES</h1>
-<hr>
-<div class="cl-group">
-    <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
-        <img class="rb-img" src="img/flower-001.jpg">
+<section id="images"" class="anchor">
+    <hr>
+    <h1 class="text-center primary">IMAGES</h1>
+    <hr>
+    <div class="cl-group">
+        <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
+            <img class="rb-img" src="img/flower-001.jpg">
+        </div>
+        <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
+            <img class="rb-img" src="img/flower-002.jpg">
+        </div>
+        <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
+            <img class="rb-img" src="img/flower-003.jpg">
+        </div>
+        <!-- Thumbnail image -->
+        <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
+            <img class="rb-img" src="img/flower-004.jpg" rb-target="img/flower-003.jpg">
+        </div>
     </div>
-    <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
-        <img class="rb-img" src="img/flower-002.jpg">
-    </div>
-    <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
-        <img class="rb-img" src="img/flower-003.jpg">
-    </div>
-    <!-- Thumbnail image -->
-    <div class="rb-img-container" style="width: 200px; height: 200px; margin: 0 auto;">
-        <img class="rb-img" src="img/flower-004.jpg" rb-target="img/flower-003.jpg">
-    </div>
-</div>
-
+</section>
 <!-- Include required javascript file for navbar -->
 <script src="js/responsive-base.js"></script>
 </body>

@@ -11,10 +11,42 @@
 	min-height: 0px;
 	float: left;
 	margin: 5px;
+	padding: 10px 5px;
 	box-sizing: border-box;
-	border: 1px solid rgba( 0, 0, 0, 0.1 );
+	border: 2px solid rgb(158, 158, 158);
 	border-radius: 5px;
 	background-color: white;
+	overflow: visible;
+}
+// cl-header and cl-content is pretty complicated.
+// In short it offsets margin to fill in padding from parent cl-x.
+.cl-header{
+	width: 100%;
+	// maring-top: -12px
+		// cl-x have 10px padding on top
+		// cl-x have 2px border on top
+		// So push top with -12px
+	margin-top: -12px;
+	// margin-left: -7px
+		// cl-x have 10px padding in total on left/right
+		// cl-x have 4px border on in total left/right
+		// So pushing half length is -7px
+	margin-left: -7px;
+	padding: 10px 5px;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 5px;
+	background-color: $primary-color;
+	overflow: visible;
+}
+.cl-content{
+	width: 100%;
+	margin-top: -2px;
+	margin-bottom: -12px;
+	margin-left: -7px;
+	padding: 10px 5px;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 5px;
+	background-color: $secondary-color;
 	overflow: visible;
 }
 // Margin left/right is 10px in total. Final width needs to be calculated with "- 10px";
@@ -43,8 +75,7 @@
 // "Group container" for grid elements.
 // Adds little margin top/bottom to first/last grids in this container
 .cl-group{
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin: 15px 0;
 	width: 100%;
 	overflow:hidden;
 }
