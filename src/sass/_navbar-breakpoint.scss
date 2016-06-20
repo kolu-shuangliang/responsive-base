@@ -1,33 +1,34 @@
 #navbar-container{
-        height: auto;
-        max-height: 100vh;
-        overflow-y: scroll;
-        #navbar-logo{
-            width: 100%;
-            min-width: 0px;
-            height: 100%;
-            a{
-                padding: 0;
-            }
+    height: auto;
+    max-height: 100vh;
+    overflow-y: scroll;
+    font-size: 12pt;
+    #navbar-logo{
+        width: 100%;
+        min-width: 0px;
+        height: 100%;
+        a{
+            padding: 0;
         }
-        ul{
-            display: none;
+    }
+    ul{
+        display: none;
+        width: 100%;
+        li{
             width: 100%;
-            li{
-                width: 100%;
-                .navbar-nested{
-                    position: relative;
-                    li{
-                        width: 100%;
-                    }
+            .navbar-nested{
+                position: relative;
+                li{
+                    width: 100%;
                 }
             }
         }
-        #navbar-collapser{
-            display: block !important;
-        }
-        #navbar-collapser:hover{
-            color: $secondary-color;
-            background-color: $navbar-color-hover;
-        }
     }
+    #navbar-collapser{
+        display: block !important;
+    }
+    #navbar-collapser:hover{
+        color: $secondary-color;
+        background-color: $navbar-color-hover;
+    }
+}
