@@ -3,19 +3,25 @@
 var ResponsiveNavbar = function () {
     
     // Some popular document elements that'll be used a lot.
+    // There's a lot of eventlisteners so it's easier and lighter to assign them to variables at start
     var collapser = document.getElementsByClassName('collapser');
     var ulList = document.getElementsByClassName('nav-links');
     var navbar_container = document.getElementById('navbar-container');
     
     // Hide navbar's scrollbar if there is any. If not padding-left will be 0px
+    // Collapsed compact/mobile navbar may require scrolling because all links may not fit inside height.
+    // It may show scrollbar inside navbar element.
+    // This will calculate difference and use padding to hide extra (which is scrollbars width)
     navbar_container.style.paddingLeft = (navbar_container.offsetWidth - navbar_container.clientWidth) + 'px';
     
-    // Boolean variables
+    // Boolean variables for checking navbar status
     var collapsed = false;
     var mobile_view = false;
     
     // Current open collapser.
+    // Collapser are used for nested links.
     // If none is open, then this value will be null.
+    // Some eventlisteners will use this variable to fire click event to close collapser
     var selected_nested = null;
     
     // Check if browser is already in mobile view.
@@ -33,10 +39,13 @@ var ResponsiveNavbar = function () {
 
     // 1
     // Loops through all collapser and adds eventlistener to them.
+    // Function sets nested links status. x.style.display = 'inline' or 'none'
     //
     // Prevents elements default action and stops propagation.
+    // There is eventlistener in document elements that will close navbar/collapser
+    // if user clicked any DOM elements.
     //
-    // Sets this object "selected_nested" variable.
+    // Sets "selected_nested" variable.
     //
     // useCapture: false
     //
@@ -74,7 +83,9 @@ var ResponsiveNavbar = function () {
     }
 
     // 2
-    // Compact view "hamburger" collapser
+    //
+    // Compact view "hamburger" click event.
+    // Show and hides links inside navbar.
     //
     // Navbar links ( except brand/logo ) will be hidden in compact/mobile view.
     // This eventlistener will show/hide links inside navbar.
@@ -102,7 +113,8 @@ var ResponsiveNavbar = function () {
             }
             collapsed = true;
         }
-        // Close collapsed nested link
+        // Close collapsed nested link.
+        // Easier to simulate click on them since collapsers eventlistener shows/hides itself.
         if (selected_nested != null) {
             eventFire(selected_nested, 'click');
         }
