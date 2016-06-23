@@ -1,33 +1,31 @@
 // TODO move fire event to personal namespace for functions
 
 var ResponsiveNavbar = function () {
-    
+
     // Some popular document elements that'll be used a lot.
     // There's a lot of eventlisteners so it's easier and lighter to assign them to variables at start
     var collapser = document.getElementsByClassName('collapser');
     var ulList = document.getElementsByClassName('nav-links');
     var navbar_container = document.getElementById('navbar-container');
-    
+
     // Hide navbar's scrollbar if there is any. If not padding-left will be 0px
     // Collapsed compact/mobile navbar may require scrolling because all links may not fit inside height.
     // It may show scrollbar inside navbar element.
     // This will calculate difference and use padding to hide extra (which is scrollbars width)
     navbar_container.style.paddingLeft = (navbar_container.offsetWidth - navbar_container.clientWidth) + 'px';
-    
+
     // Boolean variables for checking navbar status
     var collapsed = false;
     var mobile_view = false;
-    
+
     // Current open collapser.
     // Collapser are used for nested links.
     // If none is open, then this value will be null.
     // Some eventlisteners will use this variable to fire click event to close collapser
     var selected_nested = null;
-    
+
     // Check if browser is already in mobile view.
-    if (document.documentElement.clientWidth < 768) {
-        mobile_view = true;
-    }
+    if (document.documentElement.clientWidth < 768) { mobile_view = true; }
 
     // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
     // 
@@ -49,7 +47,7 @@ var ResponsiveNavbar = function () {
     //
     // useCapture: false
     //
-    for (let i = 0; i < collapser.length; i++) {
+    for (var i = 0; i < collapser.length; i++) {
         collapser[i].addEventListener('click', function (event) {
             event.preventDefault();
             event.stopPropagation();
@@ -67,8 +65,8 @@ var ResponsiveNavbar = function () {
             // If links are not displayed, then display them.
             else {
                 // If there is another collapser links visible then hides them.
-                if(selected_nested != null){
-                    let temp = selected_nested.parentElement.querySelector('.navbar-nested');
+                if (selected_nested != null) {
+                    var temp = selected_nested.parentElement.querySelector('.navbar-nested');
                     if (temp.style.display === 'inline') {
                         temp.style.display = 'none';
                         selected_nested = null;
@@ -99,16 +97,17 @@ var ResponsiveNavbar = function () {
     document.getElementById('navbar-collapser').addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
+        var i;
         // Loops through all link containers ( ul ) inside navbar
         // Change navbar links visibility depending on current status ( collapsed )
         if (collapsed) {
-            for (let i = 0; i < ulList.length; i++) {
+            for (i = 0; i < ulList.length; i++) {
                 ulList[i].style.display = 'none';
             }
             collapsed = false;
         }
         else {
-            for (let i = 0; i < ulList.length; i++) {
+            for (i = 0; i < ulList.length; i++) {
                 ulList[i].style.display = 'inline';
             }
             collapsed = true;
@@ -138,10 +137,11 @@ var ResponsiveNavbar = function () {
     // Use mobile_view so actions are only performed once after entering/existing.
     //
     window.addEventListener('resize', function () {
+        var i;
         // Checks for entering mobile or normal view.
         if (window.innerWidth >= 769 && mobile_view === true) {
             // Show all links except those nested in normal view.
-            for (let i = 0; i < ulList.length; i++) {
+            for (i = 0; i < ulList.length; i++) {
                 ulList[i].style.display = 'inline';
             }
             collapsed = false;
@@ -153,7 +153,7 @@ var ResponsiveNavbar = function () {
         }
         else if (window.innerWidth <= 768 && mobile_view === false) {
             // Hide all links in mobile view.
-            for (let i = 0; i < ulList.length; i++) {
+            for (i = 0; i < ulList.length; i++) {
                 ulList[i].style.display = 'none';
             }
             collapsed = false;
@@ -171,9 +171,9 @@ var ResponsiveNavbar = function () {
     //
     document.addEventListener('click', function () {
         // Check if theres any collapsed nested links
-        if(selected_nested != null){
+        if (selected_nested != null) {
             // Close them if there are
-            let temp = selected_nested.parentElement.querySelector('.navbar-nested');
+            var temp = selected_nested.parentElement.querySelector('.navbar-nested');
             if (temp.style.display === 'inline') {
                 temp.style.display = 'none';
                 selected_nested = null;
@@ -186,14 +186,14 @@ var ResponsiveNavbar = function () {
         }
     }, false);
 
-    
+
     // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
     // 
     // Misc functions
     // 1. fireEvent(element, eventType) - fire event on element
     //
     // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
-    
+
     // 1
     // Fires parameter 2 "eventType" on parameter 1 "element"
     //

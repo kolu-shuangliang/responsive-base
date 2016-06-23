@@ -1,19 +1,8 @@
 /*eslint-env node */
 // INSTALL some tools
-// npm install --global gulp-cli
-// Skip if already installed
-// npm install --save-dev gulp
-// npm install --save-dev gulp-sass
-// npm install --save-dev gulp-autoprefixer
-// npm install --save-dev browser-sync --msvs_version=2013
-// npm install --save-dev gulp-eslint
-// npm install --save-dev gulp-concat
-// npm install --save-dev gulp-imagemin
-// npm install --save-dev imagemin-pngquant
-// npm install --save-dev gulp-uglify
-
-// Sets eslint standards
-// eslint --init
+// "npm install --global gulp-cli" for gulp command lines
+// "npm install" for installing all stuffs using package.json
+// "eslint --init" for eslint standards
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
@@ -24,6 +13,7 @@ var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 
 
 gulp.task('default', ['copy-index', 'copy-images', 'scripts', 'sass-styles', 'es-lint'], function () {
@@ -100,9 +90,7 @@ gulp.task('copy-images', function () {
 // Minify js
 gulp.task('min-scripts', function () {
     return gulp.src('dist/js/*.js')
-        .pipe(uglify().on('error', function(e){
-            console.log(e);
-         }))
+        .pipe(uglify().on('error', function (e) { console.log(e); }))
         .pipe(gulp.dest('dist/js'));
 });
 gulp.task('deploy-images', function () {
@@ -121,4 +109,28 @@ gulp.task('deploy', [
     'deploy-images',
     'sass-styles',
     'scripts'
+]);
+
+
+gulp.task('sass-styles-lib', function () {
+    return gulp.src('src/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(rename('responsive-base.css'))
+        .pipe(gulp.dest('lib'));
+});
+gulp.task('scripts-lib', function () {
+    return gulp.src('src/js/**/*.js')
+        .pipe(concat('responsive-base.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('lib'));
+});
+gulp.task('deploy-lib', [
+    'sass-styles-lib',
+    'scripts-lib'
 ]);
