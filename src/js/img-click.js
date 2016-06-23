@@ -2,7 +2,7 @@ var ResponsiveImg = function () {
     // Construct HTML element for images fullscreen view.
     var viewer =  document.createElement('div');
     document.body.appendChild(viewer);
-    viewer.id = 'responsive-image-viewer';
+    viewer.id = 'rb-image-viewer';
     viewer.style.display = 'none';
     viewer.addEventListener('click', function(){
         viewer.removeChild(viewer.querySelector('.rb-img'));

@@ -11,6 +11,24 @@ Include css reset.
 
 Check some examples at [HERE](http://kolu-shuangliang.xyz/responsive-base/dist/)
 
+## "Namespace" ##
+I am trying to keep stuffs contained.
+
+### JavaScript ###
+JavaScript functions are objects, so there should not be any global variables other than those objects.
+`ResponsiveImage` and `ResponsiveNavbar`.
+
+### CSS ###
+CSS grids are prefixed with `cl-`.
+
+Image stuffs are prefixed with `rb-`.
+Some elements for images have id tags prefixed with `rb-`.
+
+Navbar stuffs are nested inside id `navbar-container`.
+
+There is some tag selectors and some generic class name.
+`body`, `h1`, `h2`, `h3`, `h4`, `p`, `anchor` and `pre.code`.
+
 ## Navbar ##
 * Sticks to top.
 * No JQuery required.
