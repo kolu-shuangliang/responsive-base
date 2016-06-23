@@ -87,12 +87,6 @@ gulp.task('copy-images', function () {
 });
 
 
-// Minify js
-gulp.task('min-scripts', function () {
-    return gulp.src('dist/js/*.js')
-        .pipe(uglify().on('error', function (e) { console.log(e); }))
-        .pipe(gulp.dest('dist/js'));
-});
 gulp.task('deploy-images', function () {
     return gulp.src('src/img/*')
         .pipe(imagemin({
@@ -101,15 +95,33 @@ gulp.task('deploy-images', function () {
         }))
         .pipe(gulp.dest('dist/img'));
 });
+gulp.task('deploy-scripts', function () {
+    return gulp.src('src/js/**/*.js')
+        .pipe(concat('responsive-base.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
+});
+gulp.task('deploy-sass-styles', function () {
+    return gulp.src('src/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(gulp.dest('dist/css'));
+});
 // Builds all stuffs for deployment
 // Only minified js for now. Maybe delete all useless stuffs in future
 // no min-scripts yet... uglify don't support es6 let or something...
 gulp.task('deploy', [
     'copy-index',
     'deploy-images',
-    'sass-styles',
-    'scripts'
+    'deploy-sass-styles',
+    'deploy-scripts'
 ]);
+
 
 
 gulp.task('sass-styles-lib', function () {
