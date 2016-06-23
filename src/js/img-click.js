@@ -21,7 +21,14 @@ var ResponsiveImg = function () {
     //
     // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-    // Add eventlistener that zooms into fullscreen to all rb-img-containers.
+    // 1
+    //
+    // Adds click event to all .rb-img-container.
+    // Those are library classes that contains images.
+    //
+    // Functions action depends on images rb-target attribute.
+    // rb-target tells that current image is thumbnail and this attributes value is original.
+    //
     var imgContainerList = document.getElementsByClassName('rb-img-container');
     for (var i = 0; i < imgContainerList.length; i++) {
         imgContainerList[i].addEventListener('click', function () {

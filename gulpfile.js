@@ -137,7 +137,10 @@ gulp.task('sass-styles-lib', function () {
         .pipe(gulp.dest('lib'));
 });
 gulp.task('scripts-lib', function () {
-    return gulp.src('src/js/**/*.js')
+    return gulp.src([
+        'src/js/img-click.js',
+        'src/js/navbar.js'
+    ])
         .pipe(concat('responsive-base.js'))
         .pipe(uglify())
         .pipe(gulp.dest('lib'));
