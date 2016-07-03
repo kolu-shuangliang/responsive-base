@@ -1,6 +1,3 @@
 node_modules/
-dist/css/
-dist/js/
-dist/img/
-dist/index.html
+dist/
 lib/

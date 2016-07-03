@@ -11,6 +11,7 @@ var browserSync = require('browser-sync').create();
 var eslint = require('gulp-eslint');
 var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
+var jpegtran = require('imagemin-jpegtran');
 var pngquant = require('imagemin-pngquant');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -87,11 +88,24 @@ gulp.task('copy-images', function () {
 });
 
 
-gulp.task('deploy-images', function () {
-    return gulp.src('src/img/*')
+
+gulp.task('deploy-index', function () {
+    return gulp.src(['src/index.html', 'src/.htaccess'])
+        .pipe(gulp.dest('./dist'));
+});
+gulp.task('deploy-images-png', function () {
+    return gulp.src(['src/img/**/*.png', 'src/img/**/*.PNG'])
         .pipe(imagemin({
             progressive: true,
             use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/img'));
+});
+gulp.task('deploy-images-jpg', function () {
+    return gulp.src(['src/img/**/*.jpg', 'src/img/**/*.JPG', 'src/img/**/*.jpeg', 'src/img/**/*.JPEG'])
+        .pipe(imagemin({
+            progressive: true,
+            use: [jpegtran()]
         }))
         .pipe(gulp.dest('dist/img'));
 });
@@ -116,8 +130,9 @@ gulp.task('deploy-sass-styles', function () {
 // Only minified js for now. Maybe delete all useless stuffs in future
 // no min-scripts yet... uglify don't support es6 let or something...
 gulp.task('deploy', [
-    'copy-index',
-    'deploy-images',
+    'deploy-index',
+    'deploy-images-png',
+    'deploy-images-jpg',
     'deploy-sass-styles',
     'deploy-scripts'
 ]);
