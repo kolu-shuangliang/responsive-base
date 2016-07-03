@@ -1,6 +1,5 @@
 $primary-color: rgb( 220, 235, 255 );
 $secondary-color: rgb( 245, 245, 245 );
-$navbar-logo-size: 30px;
 $navbar-height: 50px;
 $navbar-color: rgb( 245, 245, 245 );
 $navbar-color-hover: rgb( 110, 110, 110 );
@@ -43,9 +42,14 @@ pre.code{
     background-color: $secondary-color;
     overflow-x: auto;
     font-size: 1em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Courier New, Courier, monospace;
 }
-
+code{
+    padding: 0 5px;
+    font-size: 1em;
+    font-family: Courier New, Courier, monospace;
+    color: rgb( 180, 40, 40 );
+}
 .anchor{
     padding-top: 70px;
     margin-top: -70px;

@@ -4,20 +4,26 @@
     overflow-y: scroll;
     font-size: 12pt;
     #navbar-logo{
-        width: 100%;
-        min-width: 0px;
-        height: 100%;
         a{
-            padding: 0;
+            padding: 0 5px;
+            font-size: 20pt;
         }
     }
-    ul{
-        display: none;
+    .navbar-ul{
         width: 100%;
+        height: 0;
+        overflow: visible;
+
+        -webkit-transition: height 300ms ease-in;
+        -moz-transition: height 300ms ease-in;
+        -o-transition: height 300ms ease-in;
+        transition: height 300ms ease-in;
+
         li{
             width: 100%;
             .navbar-nested{
                 position: relative;
+                width: 100%;
                 li{
                     width: 100%;
                 }
@@ -26,9 +32,12 @@
     }
     #navbar-collapser{
         display: block !important;
-    }
-    #navbar-collapser:hover{
-        color: $secondary-color;
-        background-color: $navbar-color-hover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: $navbar-height;
+        text-align: center;
+        font-size: 30pt;
+        cursor: pointer;
     }
 }

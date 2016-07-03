@@ -7,6 +7,15 @@
 // SASS variabels are in responsive-base.scss file. Whole css file is parsed together there
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+// "Group container" for grid elements.
+// Adds little margin top/bottom to first/last grids in this container
+.cl-group{
+	margin: 15px 0;
+	width: 100%;
+	overflow: visible;
+}
+
 .cl-1, .cl-2, .cl-3, .cl-33, .cl-4, .cl-44, .cl-444{
 	min-height: 0px;
 	float: left;
@@ -70,12 +79,4 @@
 }
 .cl-444{
 	width: calc( 75% - 10px );
-}
-
-// "Group container" for grid elements.
-// Adds little margin top/bottom to first/last grids in this container
-.cl-group{
-	margin: 15px 0;
-	width: 100%;
-	overflow:hidden;
 }

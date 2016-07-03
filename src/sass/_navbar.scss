@@ -11,81 +11,68 @@
 #navbar-container{
 	position: fixed;
 	top: 0;
-	width: 100%;
+	left: 0;
+	right: 0;
+	z-index: 100000;
 	height: $navbar-height;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	background-color: $navbar-color;
-	font-size: 13pt;
-	z-index: 999999;
+	font-size: 14pt;
+	a{
+		display: block;
+		padding: 0 15px;
+		text-decoration: none;
+		line-height: $navbar-height;
+		color: $navbar-color-hover;
+		background-color: $navbar-color;
+	}
 	#navbar-logo{
 		float: left;
 		a{
-			display: block;
-			padding: 0 20px;
-			font-size: $navbar-logo-size;
-			line-height: $navbar-height;
-			background-color: $navbar-color;
-			color: $navbar-color-hover;
-			text-decoration: none;
+			font-size: 25pt;
 		}
 	}
-	ul{
+	.navbar-ul{
 		list-style: none;
-		margin: 0;
-		padding: 0;
 		float: left;
 		li{
 			float: left;
 			position: relative;
-			a{
-				display: block;
-				padding: 0 15px;
-				line-height: $navbar-height;
-				background-color: $navbar-color;
-				color: black;
-				text-decoration: none;
-			}
-			a:hover{
-				color: $secondary-color;
-				background-color: $navbar-color-hover;
-			}
-			.collapser{
+			.navbar-nested-collapser{
 				cursor: pointer;
 			}
-			.collapser:after{
+			.navbar-nested-collapser:after{
 				padding-left: 5px;
 				content: '▾';
 			}
 			.navbar-nested{
 				position: absolute;
-				display: none;
+				height: 0;
+				overflow: hidden;
+
+				-webkit-transition: height 200ms ease-in;
+                -moz-transition: height 200ms ease-in;
+                -o-transition: height 200ms ease-in;
+                transition: height 200ms ease-in;
 				li {
 					min-width: 200px;
+					width: 100%;
 					a{
-						padding-left: 15px;
+						width: 100%;
+						float: left;
 						line-height: $navbar-height;
+						white-space: nowrap;
 						border-left: 5px solid $navbar-color-hover;
 					}
 				}
-                li:first-child{
-                    border-top: 2px solid $navbar-color-hover;
-                }
 			}
 		}
 	}
-	#navbar-collapser{
-		display: none;
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding: 0 10px;
-		line-height: $navbar-height;
-		font-size: 30px;
-		color: black;
-		text-decoration: none;
-		cursor: pointer;
-	}
-	#navbar-collapser:hover{
+	li.selected a, a.selected, a.active, a:hover{
 		color: $secondary-color;
 		background-color: $navbar-color-hover;
+	}
+	#navbar-collapser{
+		display: none;
 	}
 }
