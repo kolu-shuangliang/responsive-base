@@ -7,6 +7,12 @@ $navbar-color-hover: rgb( 110, 110, 110 );
 // Reset browser specific stuffs
 @import 'reset';
 
+*, *:before, *:after{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 /*
     Font stuffs
 */

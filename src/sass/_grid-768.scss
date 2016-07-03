@@ -2,8 +2,8 @@
 // Style file for grid system. Check top comments in _grid.scss file
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 .cl-4{
-    width: calc( 33.33% - 10px );
+    min-width: calc( 33.33% - 10px );
 }
 .cl-44{
-    width: calc( 66.66% - 10px );
+    min-width: calc( 66.66% - 10px );
 }
