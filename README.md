@@ -32,12 +32,11 @@ There is some tag selectors and some generic class name.
 ## Navbar ##
 * Sticks to top.
 * No JQuery required.
-* Default and mobile view. Media query triggers at < 768px width.
-* Logo/brand, single nested links, floats left/right.
+* Default and mobile view. Media query triggers at <= 768px width.
+* Logo/brand, single nested links
 
 Problems for now.
 * Too many links push to second row. Have to manage them manually.
-* If last link in `float: right` is nested, its dropdown will clip to outside of the viewport. Manage manually.
 
 ## Responsive grids ##
 Grid system that resizes itself at certain media query widths.
