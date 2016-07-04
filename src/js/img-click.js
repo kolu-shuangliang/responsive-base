@@ -1,7 +1,4 @@
-// Image stuffs.
-// Viewer is just fullscreen image "popup".
-
-var ResponsiveImg = function () {
+(function () {
     // Create viewer element here at initialization.
     // Maybe? easier for future. No need to manually insert HTML element manually.
     var viewer = document.createElement('div');
@@ -35,7 +32,7 @@ var ResponsiveImg = function () {
             viewer.style.display = 'block';
 
             var tbImage = this.querySelector('.rb-img');
-            //
+            
             var image = null;
             if (tbImage.getAttribute('rb-target')) {
                 image = new Image();
@@ -53,6 +50,4 @@ var ResponsiveImg = function () {
     function onLoadAppend(target, element) {
         target.appendChild(element);
     }
-};
-// Invoke navbar
-ResponsiveImg();
+})();
