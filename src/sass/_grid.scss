@@ -79,3 +79,13 @@ $panel-color: rgb(158, 158, 158);
 .cl-panel-content{
 	margin: -2px -6px -12px -6px;
 }
+.cl-panel-content-sep{
+    padding: 10px 0;
+}
+.cl-panel-content-sep:not(:first-child):before{
+    content: '';
+    width: 100%;
+	padding-top: 1em;
+    float: left;
+    border-top: 2px dotted $panel-color;
+}
