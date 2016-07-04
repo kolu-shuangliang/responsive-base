@@ -3,6 +3,7 @@ $secondary-color: rgb( 245, 245, 245 );
 $navbar-height: 50px;
 $navbar-color: rgb( 245, 245, 245 );
 $navbar-color-hover: rgb( 110, 110, 110 );
+$panel-color: rgb(158, 158, 158);
 
 // Reset browser specific stuffs
 @import 'reset';
@@ -56,6 +57,10 @@ code{
     font-family: Courier New, Courier, monospace;
     color: rgb( 180, 40, 40 );
 }
+hr{
+    width: 100%;
+    float: left;
+}
 .anchor{
     padding-top: 70px;
     margin-top: -70px;
@@ -68,7 +73,42 @@ code{
 @import 'grid';
 // Image element. Include zoom-in fullscreen viewer
 @import 'image';
+.cl-nav-tab{
+    width: 100%;
+    float: left;
+    overflow: visible;
+    // flex
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    cursor: pointer;
 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .cl-nav-tab-tab{
+        flex: 1;
+        height: 50px;
+        font-size: 2em;
+        text-align: center;
+        line-height: 50px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 2px solid $panel-color;
+        background-color: $secondary-color;
+    }
+    .active{
+        color: $secondary-color;
+		background-color: $navbar-color-hover;
+        border-bottom: 0px;
+    }
+}
 
 /*
     Media queries. Picked some common device widths
@@ -81,6 +121,23 @@ code{
     // Collapses NavBar into compact view in this media width.
     @import 'navbar-breakpoint';
     
+    .cl-nav-tab{
+        .cl-nav-tab-tab{
+            min-width: 100%;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 0px;
+        }
+        .cl-nav-tab-tab:nth-child(1){
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .cl-nav-tab-tab:nth-last-child(1){
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
     @import 'grid-768';
 }
 
@@ -124,7 +181,7 @@ code{
 .text-pre{
     white-space: pre-wrap;
 }
-.text-no-select{
+.cl-text-ns{
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

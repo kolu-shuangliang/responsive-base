@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="css/responsive-base.css">
 
     <!-- style.css for previewing elements -->
-    <style>body{padding-top: 70px;}.test{text-align: center;font-size: 40px;line-height: 50px;}</style>
+    <style>
+        body{padding-top: 70px;}
+        .test{text-align: center;font-size: 40px;line-height: 50px;}
+        .test2{text-align: center;font-size: 16pt;line-height: 50px;}
+    </style>
 </head>
 
 <body>
@@ -32,19 +36,20 @@
 -->
 <nav id="navbar-container">
     <div id="navbar-logo"><a href="#">Shuangliang Kolu</a></div>
-    <a id="navbar-collapser" class="text-no-select">☰</a>
+    <a id="navbar-collapser" class="cl-text-ns">☰</a>
     <ul class="navbar-ul">
         <!-- Outter layer li (not nested) require .navbar-li -->
         <li class="navbar-li" ><a href="https://github.com/kolu-shuangliang/responsive-base" target="_blank">Repository</a></li>
-        <li class="navbar-li"><a class="navbar-nested-collapser text-no-select">Elements</a>
+        <li class="navbar-li"><a class="navbar-nested-collapser cl-text-ns">Elements</a>
             <ul class="navbar-nested">
+                <li><a href="#navs">Nav elements</a></li>
                 <li><a href="#grids">Grid elements</a></li>
                 <li><a href="#pre">Pre for codes</a></li>
                 <li><a href="#text-elements">Text elements</a></li>
                 <li><a href="#images">Images</a></li>
             </ul>
         </li>
-        <li class="navbar-li"><a class="navbar-nested-collapser text-no-select">empty</a>
+        <li class="navbar-li"><a class="navbar-nested-collapser cl-text-ns">empty</a>
             <ul class="navbar-nested">
                 <li><a href="#empty">empty nested</a></li>
                 <li><a href="#empty">empty nested</a></li>
@@ -52,6 +57,26 @@
         </li>
     </ul>
 </nav>
+
+<!--
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+	NAV
+
+	// // // // // // // // // // // // // // // // // // // // // // // // // // //
+-->
+
+<section id="navs" class="anchor">
+    <hr><div class="cl-group"><h1 class="text-center">NAV</h1></div><hr>
+    <nav class="cl-nav-tab">
+        <div class="cl-nav-tab-tab active">1</div>
+        <div class="cl-nav-tab-tab">2</div>
+        <div class="cl-nav-tab-tab">3</div>
+        <div class="cl-nav-tab-tab">4</div>
+        <div class="cl-nav-tab-tab">5</div>
+    </nav>
+</section>
+
 <!--
 	// // // // // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -64,10 +89,10 @@
     <div class="cl-group"><h1 class="text-center">RESPONSIVE GRIDS</h1></div>
     <hr>
     <div class="cl-group">
-        <div class="test cl-panel cl-1 primary">1</div>
+        <div class="test cl-panel cl-1 primary">1 - primary</div>
+        <div class="test cl-panel cl-2 secondary">1 / 2 - secondary</div>
         <div class="test cl-panel cl-2 secondary">1 / 2</div>
-        <div class="test cl-panel cl-2 secondary">1 / 2</div>
-        <div class="test cl-panel cl-3">1 / 3</div>
+        <div class="test2 cl-panel cl-3"><code>.cl-group</code> is container for <code>.cl-x</code></div>
         <div class="test cl-panel cl-3">1 / 3</div>
         <div class="test cl-panel cl-3">1 / 3</div>
         <div class="test cl-panel cl-33">2 / 3</div>
